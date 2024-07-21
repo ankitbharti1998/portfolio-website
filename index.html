@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+       body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #222;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f00;
+}
+
+.name {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.menu {
+    margin-bottom: 100px;
+    margin-left: 20px; /* Adjusted margin to fit better */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.menu ul li a:hover {
+    color: #f00;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.social {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 300px;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 50px 20px;
+    background: #333;
+    border-bottom: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 100vh; /* Ensure section takes at least the viewport height */
+}
+
+.intro {
+    display: block; /* Show the intro section by default */
+}
+
+.intro h1 {
+    font-size: 48px;
+    margin: 0;
+    text-align: center;
+}
+
+.intro .highlight {
+    color: #f00;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f00;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #d00;
+}
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f00;
+}
+
+p {
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.skills-content {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.project {
+    background: #555;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-text">AB</div>
+            <div class="name">Ankit</div>
+            <div class="title">Web Developer</div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" data-section="intro">Home</a></li>
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="skills">My Skills</a></li>
+                <li><a href="#" data-section="work">Work</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+                <li><a href="#" data-section="blog">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="social">
+        <a href="https://www.linkedin.com/in/ankit-bharti1" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </div>
+    <div class="main-content">
+        <section id="intro" class="intro">
+            <div class="image-container">
+                <img src="C:\Users\admin\Desktop\PIC\ankit.jpg" alt="Profile Picture">
+            </div>
+            <h1>Hi,<br> I'm <span class="highlight">Ankit</span>,<br> web developer</h1>
+            <p>Backend Developer / Tech Enthusiast</p>
+            <a href="mailto:ankitaryan533@gmail.com">
+                <button>Contact me!</button>
+            </a>
+            <a href="C:\Users\admin\Desktop\PIC\Ankit_Bharti_3+years of Experiance.pdf" target="_blank">
+    <button>Download CV</button>
+     </a>
+        </section>
+        <section id="about">
+            <div class="about-content">
+                <div class="image-container">
+                    <img src="C:\Users\admin\Desktop\PIC\ankit-about.jpg" alt="Laptop Picture">
+                </div>
+                <h2>About</h2>
+                <p><strong>Introduction:</strong><br>
+                Hello! I’m Ankit, a passionate backend developer with a knack for solving complex problems and crafting efficient solutions. With a background in designing and developing robust backend systems, I thrive in creating seamless and scalable applications. My journey is fueled by a love for technology and a commitment to delivering high-quality, impactful work.</p>
+                <p><strong>What Drives Me:</strong><br>
+                I am driven by the challenge of transforming intricate requirements into intuitive and powerful systems. I believe in the power of clean code, innovative thinking, and continuous learning. My goal is to leverage my skills to contribute to projects that push the boundaries of technology and make a difference.</p>
+                <p><strong>Fun Fact:</strong><br>
+                When I’m not coding, you can find me exploring new technologies, indulging in my favorite books, or experimenting with new recipes in the kitchen.</p>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="skills-content">
+                <h2>My Skills</h2>
+                <p><strong>~~~:Technical Proficiencies:~~~</strong><br>
+                Languages: Java, Angular, JavaScript<br>
+                Frameworks: Spring MVC,Spring Boot<br>
+				ORM tool : Hibernate , JPA<br>
+                Databases:Oracle,MySQL<br>
+                IDE/Tools: Ecelipse, Vs Code</p>
+                <p><strong>Core Competencies:</strong><br>
+                Backend Development: Expertise in designing scalable APIs and services.<br>
+                System Architecture: Skilled in creating robust and efficient system architectures.<br>
+                Performance Optimization: Proficient in enhancing application performance and reliability.</p>
+                <p><strong>Strengths:</strong><br>
+                Problem-Solving: Adept at tackling complex issues with innovative solutions.<br>
+                Collaboration: Strong team player with excellent communication skills.<br>
+                Continuous Learning: Passionate about staying updated with the latest trends and technologies.</p>
+            </div>
+        </section>
+        <section id="work">
+    <h2>Work</h2>
+    <div class="project">
+        <h3>Application for User and Branch Management</h3>
+        <ul>
+            <li>Developed an application for creating, updating, and deleting branches and users.</li>
+            <li>Implemented functionalities to create new roles and assign them to users.</li>
+            <li>Managed distances between branches within the system.</li>
+            <li>Maintained denomination records and added mobile cashier details.</li>
+        </ul>
+    </div>
+    <div class="project">
+        <h3>Document Upload Portal</h3>
+        <ul>
+            <li>Implemented role-based user management allowing for the creation, updating, and deletion of users.</li>
+            <li>Established and maintained a maker-checker workflow for systematic validation and approval of documents.</li>
+            <li>Implemented document rejection and re-uploadation flow to manage document status.</li>
+            <li>Integrated a feature for users to easily check the status of documents within the system.</li>
+        </ul>
+    </div>
+    <div class="project">
+        <h3>India Post File Process</h3>
+        <ul>
+            <li>Developed a Java application to manage India Post files containing customer cheque book status details.</li>
+            <li>Utilized multiple stored procedures for comprehensive data analysis and updating of cheque book statuses.</li>
+        </ul>
+    </div>
+</section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you would like to get in touch, please reach out via <a href="mailto:ankitaryan533@gmail.com">email</a>.</p>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Coming soon...</p>
+        </section>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.menu a');
+        const sections = document.querySelectorAll('section');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                sections.forEach(section => section.style.display = 'none');
+
+                const sectionId = this.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                section.style.display = 'block';
+            });
+        });
+		
+		 // JavaScript to handle CV download
+    document.querySelector('a[href="C:\\Users\\admin\\Desktop\\PIC\\Ankit_Bharti_3+years of Experiance.pdf"]').addEventListener('click', function(event) {
+        window.open(this.href, '_blank');
+        event.preventDefault(); // Prevent the default action to avoid navigation
+    });
+    </script>
+</body>
+</html>
